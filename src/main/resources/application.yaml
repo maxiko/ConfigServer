@@ -1,0 +1,16 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: ${REPO_URI}
+          username: ${REPO_USERNAME}
+          password: ${REPO_PASSWORD}
+          clone-on-start: true
+          skip-ssl-validation: true
+      label: ${REPO_BRANCH}
