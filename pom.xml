@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>org.crinsonsn0w</groupId>
 	<artifactId>configserver</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.3</version>
 	<name>configserver</name>
 	<description>SpringBoot Config Server</description>
 
@@ -64,6 +64,22 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>3.0.0-M1</version>
+				<configuration>
+					<tagNameFormat>v@{project.version}</tagNameFormat>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<preparationGoals>clean -Premote-dev</preparationGoals>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-scm-plugin</artifactId>
+						<version>1.11.2</version>
+					</dependency>
+				</dependencies>
+			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
