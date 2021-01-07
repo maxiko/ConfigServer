@@ -70,7 +70,7 @@
 				<configuration>
 					<tagNameFormat>v@{project.version}</tagNameFormat>
 					<autoVersionSubmodules>true</autoVersionSubmodules>
-					<preparationGoals>clean -Premote-dev</preparationGoals>
+					<preparationGoals>clean</preparationGoals>
 				</configuration>
 				<dependencies>
 					<dependency>
